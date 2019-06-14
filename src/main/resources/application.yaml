@@ -1,0 +1,51 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: ItemServices
+
+---
+
+spring:
+  profiles: dev
+  data.mongodb:
+    host: localhost
+    port: 27017
+    database: local
+
+server:
+  port: 8088
+---
+
+spring:
+  profiles: test
+  data.mongodb:
+    host: localhost
+    port: 27017
+    database: local
+
+server:
+  port: 8088
+
+---
+
+spring:
+  profiles: non-prod
+  data.mongodb:
+    host: localhost
+    port: 27017
+    database: qa
+
+server:
+  port: 8089
+---
+
+spring:
+  profiles: prod
+  data.mongodb:
+    host: localhost
+    port: 27017
+    database: prod
+
+server:
+  port: 8090
